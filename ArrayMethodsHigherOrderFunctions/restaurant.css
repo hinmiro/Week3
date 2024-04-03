@@ -1,0 +1,59 @@
+body {
+  background-color: lightsteelblue;
+  font-family: "Chakra Petch Light", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+th {
+  background-color: lightgoldenrodyellow;
+  border-bottom: 1px solid #ccc;
+  padding: .5em 1em;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 1em;
+}
+
+.highlight {
+  background-color: aliceblue;
+  color: dodgerblue;
+  font-size: larger;
+}
+
+td:hover {
+  cursor: pointer;
+}
+
+
+.infoDiv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.infoDiv label {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.modal {
+  background-color: lightgrey;
+  border-start-start-radius: 50px;
+  border-start-end-radius: 50px;
+  border-style: ridge;
+  box-shadow: 0 0 150px 10px black;
+  width:  30rem;
+  height: 40rem;
+}
+
