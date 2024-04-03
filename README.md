@@ -1,3 +1,7 @@
-# JavaScript Starter
+# Week 3
 
-For Basics of Web Development course in Metropolia.
+### Advanced JavaScript concepts
+
+Assignments 1 - 5
+
+[Link to repo]()
