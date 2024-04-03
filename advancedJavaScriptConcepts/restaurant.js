@@ -1,6 +1,12 @@
 'use strict';
-import {restaurantRow, restaurantModal} from '/Assignments/components.js';
-import {getRestaurants, getRestaurantMenu} from '/Assignments/utils.js';
+import {
+  restaurantRow,
+  restaurantModal,
+} from '/advancedJavaScriptConcepts/components.js';
+import {
+  getRestaurants,
+  getRestaurantMenu,
+} from '/advancedJavaScriptConcepts/utils.js';
 
 const table = document.querySelector('table');
 
