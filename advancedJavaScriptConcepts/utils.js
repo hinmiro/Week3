@@ -1,5 +1,5 @@
 'use strict';
-import {baseURL} from '/advancedJavaScriptConcepts/variables.js';
+import {baseURL} from './variables.js';
 
 const getRestaurants = async () => {
   const response = await fetch(baseURL + 'restaurants');
