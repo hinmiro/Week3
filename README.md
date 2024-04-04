@@ -4,6 +4,14 @@
 
 Assignments 1 - 5
 
-[Link to repo](https://github.com/hinmiro/Week3/tree/main/advancedJavaScriptConcepts)
+[Link](https://users.metropolia.fi/~mirohi/WebOhjelmointi/Week3/Advanced_JavaScript_Concepts/)
+
+### Array Methods And Higher Order Functions
+
+Assignments
+
+[Link](https://users.metropolia.fi/~mirohi/WebOhjelmointi/Week3/Array_Methods_And_Higher_Order_Functions/)
+
+
 
 
