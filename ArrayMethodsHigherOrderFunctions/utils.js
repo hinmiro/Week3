@@ -1,5 +1,5 @@
 'use strict';
-import {baseURL} from '/advancedJavaScriptConcepts/variables.js';
+import {baseURL} from './variables.js';
 
 const getRestaurants = async () => {
   const response = await fetch(baseURL + 'restaurants');
@@ -22,4 +22,29 @@ const getRestaurantMenu = async (id) => {
   }
 };
 
-export {getRestaurants, getRestaurantMenu};
+const nameSort = (restaurants) => {
+  return [...restaurants].sort((a, b) =>
+    a.name.toLowerCase().trim().localeCompare(b.name.toLowerCase().trim())
+  );
+};
+
+const sortFilter = (restaurants, option, value) => {
+  const filtered =
+    option === 'company'
+      ? restaurants.filter(({company}) => company === value)
+      : restaurants.filter(({city}) => city === value);
+  filtered.length === 0
+    ? (() => {
+        throw new Error(`No restaurants found with ${option} "${value}"`);
+      })()
+    : null;
+  return filtered;
+};
+
+function clearTable(table) {
+  while (table.firstChild) {
+    table.removeChild(table.firstChild);
+  }
+}
+
+export {getRestaurants, getRestaurantMenu, nameSort, sortFilter, clearTable};

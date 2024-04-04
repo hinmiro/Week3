@@ -1,24 +1,63 @@
 'use strict';
-import {
-  restaurantRow,
-  restaurantModal,
-} from '/advancedJavaScriptConcepts/components.js';
+import {restaurantRow, restaurantModal} from './components.js';
 import {
   getRestaurants,
   getRestaurantMenu,
-} from '/advancedJavaScriptConcepts/utils.js';
+  nameSort,
+  sortFilter,
+  clearTable,
+} from './utils.js';
+
+const restaurants = [];
 
 const table = document.querySelector('table');
+const filterButton = document.querySelector('#filterButton');
+const showAllButton = document.querySelector('#showAll');
+const filterModal = document.querySelector('.filterModal');
+const closeButtonFilter = document.createElement('span');
+const submitFilter = document.querySelector('#filter');
 
-async function renderRestaurants() {
+closeButtonFilter.setAttribute('id', 'closeButtonFilter');
+closeButtonFilter.innerHTML = '&times;';
+filterModal.prepend(closeButtonFilter);
+
+showAllButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  clearTable(table);
+  renderRestaurants(restaurants);
+});
+
+filterButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  filterModal.style.display = 'flex';
+});
+
+closeButtonFilter.addEventListener('click', () => {
+  filterModal.style.display = 'none';
+});
+
+submitFilter.addEventListener('click', async (event) => {
+  event.preventDefault();
   const restaurants = await getRestaurants();
+  const input = document.querySelector('#filterInput').value;
+  const option = document.querySelector('#filterSelect').value;
+  const filtered = sortFilter(restaurants, option, input);
 
-  const sortedRest = [...restaurants].sort((a, b) =>
-    a.name.toLowerCase().trim().localeCompare(b.name.toLowerCase().trim())
-  );
-  console.log(sortedRest);
+  clearTable(table);
 
-  sortedRest.forEach((r) => {
+  renderRestaurants(filtered);
+  filterModal.style.display = 'none';
+});
+
+async function renderRestaurants(sortedRestaurants) {
+  console.log(sortedRestaurants);
+  if (!sortedRestaurants.length) {
+    const restaurants = await getRestaurants();
+    sortedRestaurants = nameSort(restaurants);
+  }
+  console.log(sortedRestaurants);
+
+  sortedRestaurants.forEach((r) => {
     const {_id} = r;
     const modal = document.querySelector('.modal');
     const form = document.querySelector('#form');
@@ -50,4 +89,4 @@ async function renderRestaurants() {
   });
 }
 
-renderRestaurants();
+await renderRestaurants(restaurants);

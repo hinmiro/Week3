@@ -9,7 +9,7 @@ const restaurantRow = (restaurant) => {
 };
 
 const restaurantModal = (restaurant, menu) => {
-  const {name, address, postalCode, city, phone} = restaurant;
+  const {name, company, address, postalCode, city, phone} = restaurant;
   const tr = document.createElement('tr');
   const table = document.createElement('table');
   const {courses} = menu;
@@ -17,6 +17,7 @@ const restaurantModal = (restaurant, menu) => {
 
   tr.innerHTML = `
     <h1>${name}</h1>
+    <p>${company}</p>
     <p>${address}</p>
     <p>${postalCode}</p>
     <p>${city}</p>

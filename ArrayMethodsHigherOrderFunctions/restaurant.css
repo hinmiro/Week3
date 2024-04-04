@@ -48,12 +48,54 @@ td:hover {
 }
 
 .modal {
-  background-color: lightgrey;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
   border-start-start-radius: 50px;
   border-start-end-radius: 50px;
-  border-style: ridge;
+  border-style: inset;
+  border-color: aquamarine;
   box-shadow: 0 0 150px 10px black;
-  width:  30rem;
+  width: 30rem;
   height: 40rem;
 }
+
+.modal h1, h3 {
+  text-align: center;
+}
+
+.filterModal {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border-style: inset;
+  border-color: aquamarine;
+  border-radius: 40px;
+  box-shadow: mediumaquamarine 0 0 15px 5px;
+}
+
+.filterModal div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem;
+}
+
+.filterModal label, input, select {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#closeButtonFilter {
+  font-size: x-large;
+  color: darkgray;
+}
+
+#closeButtonFilter:hover {
+  cursor: pointer;
+  color: black;
+}
+
+
 
