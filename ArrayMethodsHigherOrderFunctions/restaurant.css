@@ -1,5 +1,4 @@
 body {
-  background-image:;
   font-family: "Chakra Petch Light", Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -10,10 +9,16 @@ table {
   border-spacing: 0;
   margin: 0;
   padding: 0;
+  background-color: transparent;
+  backdrop-filter: saturate(1.5);
+  color: white;
+  text-shadow: 1px 0 black, 1px 1px black;
+
 }
 
 th {
-  background-color: lightgoldenrodyellow;
+  background-color: transparent;
+  backdrop-filter: sepia(0.5);
   border-bottom: 1px solid #ccc;
   padding: .5em 1em;
   text-align: left;

@@ -33,7 +33,8 @@ const restaurantModal = (restaurant, menu) => {
     ? (menuHtml += `<td>Menu not available today.</td>`)
     : courses.forEach(({name, price}) => {
         const tr = document.createElement('tr');
-        table.innerHTML = `<td>${name} ${price}</td>`;
+        tr.innerHTML = `<td>${name} ${price}</td>`;
+        table.innerHTML += tr.outerHTML;
         menuHtml += table.outerHTML;
       });
   return menuHtml;
